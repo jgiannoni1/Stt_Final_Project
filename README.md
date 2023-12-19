@@ -11,10 +11,10 @@ This Project is designed to handle speech-to-text (STT) processing and text anal
         - Outputs a heatmap as a png to show the similarities between the files in a matrix.
 
 ## Getting Started
-- pip install 'openai-whisper' and 'pydub'. Whisper is the STT model I ended up going with because it doesn't require working with tokens, curl, or anything like that. Pydub is what's being used for the metadata extraction.
+- pip install `openai-whisper` and `pydub`. Whisper is the STT model I ended up going with because it doesn't require working with tokens, curl, or anything like that. Pydub is what's being used for the metadata extraction.
 - Make sure you also have things like matplotlib, seaborn, and sklearn installed. They were already available to me through VScode in JupyterHub. 
 - Run main.py from within the code folder to generate the csv and png files into the output_files folder. I used the "tiny" whisper model which is the least accurate, but quickest. It took a little over 2min for my machine to complete the process. A big factor here is obviously the file sizes, so the audio examples I used in the audio folder are very short.
-    - If for some reason you're having trouble with whisper, try deleting the 'fp16=false' from the 'transcribe_audio()' in 'AudioFile.py'. Also, in general, their documentation was really easy to understand: https://github.com/openai/whisper 
+    - If for some reason you're having trouble with whisper, try deleting the 'fp16=false' from the `transcribe_audio()` in `AudioFile.py`. Also, in general, their documentation was really easy to understand: https://github.com/openai/whisper 
 
 ## Project Structure
 - `Stt_Final_Project`: Root directory of the project.
@@ -26,13 +26,7 @@ This Project is designed to handle speech-to-text (STT) processing and text anal
   - `audio`: Directory for storing audio files.
   - `output_files`: Directory for storing output files like transcriptions, metadata, and analysis results.
 
-## Dependencies
-- `pydub`: To handle audio file operations.
-- `whisper`: For audio transcription.
-- `sklearn`: For text analysis (TF-IDF and cosine similarity).
-- `matplotlib` and `seaborn`: For generating heatmaps of similarity analysis.
-
-## Scripts Description
+## File Description
 ### `AudioFile.py`
 Handles audio file loading and processing.
 - `AudioFile` class:
@@ -59,13 +53,3 @@ The main script to run the project.
 - Collects audio files from the `audio` folder.
 - Initializes `FileProcessing` with the collected audio file paths.
 - Executes the processing of files.
-
-## Running the Project
-1. Ensure all dependencies are installed.
-2. Place audio files in the `audio` folder.
-3. Run `main.py` from the `code` directory.
-4. Check the `output_files` folder for results.
-
-## Output
-- Transcribed text, metadata, and word counts are saved in `metadata_output.csv`.
-- Heatmaps representing the similarity between audio file transcriptions are saved as images in the `output_files` directory.
