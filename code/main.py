@@ -5,6 +5,7 @@ if __name__ == '__main__':
     audio_folder_path = '../audio/*'
     import glob
 
+    # covers a wide range of audio file types 
     file_list = glob.glob('../audio/*.wav') + \
                 glob.glob('../audio/*.mp3') + \
                 glob.glob('../audio/*.aac') + \
