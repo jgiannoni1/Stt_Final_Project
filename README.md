@@ -11,8 +11,9 @@ This Project is designed to handle speech-to-text (STT) processing and text anal
         - Outputs a heatmap as a png to show the similarities between the files in a matrix.
 
 ## Getting Started
+- Python versions supported: 3.8 up to but not including 3.12.
 - pip install `openai-whisper` and `pydub`. Whisper is the STT model I ended up going with because it doesn't require working with tokens, curl, or anything like that. Pydub is what's being used for the metadata extraction.
-- Make sure you also have things like matplotlib, seaborn, and sklearn installed. They were already available to me through VScode in JupyterHub. 
+- Make sure you also have things like matplotlib, seaborn, ffmpeg, and sklearn installed. They were already available to me through VScode in JupyterHub. 
 - Run main.py from within the code folder to generate the csv and png files into the output_files folder. I used the "tiny" whisper model which is the least accurate, but quickest. It took a little over 2min for my machine to complete the process. A big factor here is obviously the file sizes, so the audio examples I used in the audio folder are very short.
     - If for some reason you're having trouble with whisper, try deleting the 'fp16=false' from the `transcribe_audio()` in `AudioFile.py`. Also, in general, their documentation was really easy to understand: https://github.com/openai/whisper 
 
